@@ -19,7 +19,7 @@ angular.module('ui.bootstrap.buttons', [])
 
       //model -> UI
       ngModelCtrl.$render = function () {
-        element.toggleClass(buttonsCtrl.activeClass, angular.equals(ngModelCtrl.$modelValue, scope.$eval(attrs.btnRadio)));
+        element.toggleClass(buttonsCtrl.activeClass, angular.equals(scope.$eval(ngModelCtrl.$modelValue), scope.$eval(attrs.btnRadio)));
       };
 
       //ui->model
@@ -59,7 +59,7 @@ angular.module('ui.bootstrap.buttons', [])
 
       //model -> UI
       ngModelCtrl.$render = function () {
-        element.toggleClass(buttonsCtrl.activeClass, angular.equals(ngModelCtrl.$modelValue, getTrueValue()));
+        element.toggleClass(buttonsCtrl.activeClass, angular.equals(scope.$eval(ngModelCtrl.$modelValue), getTrueValue()));
       };
 
       //ui->model
